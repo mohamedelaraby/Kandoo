@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		44F68A5622D73F2600EA4CD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F68A5522D73F2600EA4CD2 /* AppDelegate.swift */; };
-		44F68A5822D73F2600EA4CD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F68A5722D73F2600EA4CD2 /* ViewController.swift */; };
+		44F68A5822D73F2600EA4CD2 /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F68A5722D73F2600EA4CD2 /* CheckListViewController.swift */; };
 		44F68A5B22D73F2600EA4CD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44F68A5922D73F2600EA4CD2 /* Main.storyboard */; };
 		44F68A5E22D73F2600EA4CD2 /* Kandoo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 44F68A5C22D73F2600EA4CD2 /* Kandoo.xcdatamodeld */; };
 		44F68A6022D73F2800EA4CD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44F68A5F22D73F2800EA4CD2 /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		44F68A5222D73F2600EA4CD2 /* Kandoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kandoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F68A5522D73F2600EA4CD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44F68A5722D73F2600EA4CD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		44F68A5722D73F2600EA4CD2 /* CheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListViewController.swift; sourceTree = "<group>"; };
 		44F68A5A22D73F2600EA4CD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44F68A5D22D73F2600EA4CD2 /* Kandoo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Kandoo.xcdatamodel; sourceTree = "<group>"; };
 		44F68A5F22D73F2800EA4CD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,15 +56,23 @@
 		44F68A5422D73F2600EA4CD2 /* Kandoo */ = {
 			isa = PBXGroup;
 			children = (
-				44F68A5522D73F2600EA4CD2 /* AppDelegate.swift */,
-				44F68A5722D73F2600EA4CD2 /* ViewController.swift */,
+				44F68A6A22D7486000EA4CD2 /* Support files */,
+				44F68A5722D73F2600EA4CD2 /* CheckListViewController.swift */,
 				44F68A5922D73F2600EA4CD2 /* Main.storyboard */,
 				44F68A5F22D73F2800EA4CD2 /* Assets.xcassets */,
-				44F68A6122D73F2800EA4CD2 /* LaunchScreen.storyboard */,
 				44F68A6422D73F2800EA4CD2 /* Info.plist */,
-				44F68A5C22D73F2600EA4CD2 /* Kandoo.xcdatamodeld */,
 			);
 			path = Kandoo;
+			sourceTree = "<group>";
+		};
+		44F68A6A22D7486000EA4CD2 /* Support files */ = {
+			isa = PBXGroup;
+			children = (
+				44F68A5522D73F2600EA4CD2 /* AppDelegate.swift */,
+				44F68A6122D73F2800EA4CD2 /* LaunchScreen.storyboard */,
+				44F68A5C22D73F2600EA4CD2 /* Kandoo.xcdatamodeld */,
+			);
+			path = "Support files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44F68A5822D73F2600EA4CD2 /* ViewController.swift in Sources */,
+				44F68A5822D73F2600EA4CD2 /* CheckListViewController.swift in Sources */,
 				44F68A5622D73F2600EA4CD2 /* AppDelegate.swift in Sources */,
 				44F68A5E22D73F2600EA4CD2 /* Kandoo.xcdatamodeld in Sources */,
 			);
