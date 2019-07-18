@@ -11,4 +11,10 @@ import Foundation
 class CheckListItem {
     var text = ""
     var isChecked = false
+    
+    //Modify the check property indirectly.
+    func toggleChecked(){
+        isChecked = !isChecked
+    }
+    
 }
