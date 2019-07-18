@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44160CE222E0C7650037136A /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44160CE122E0C7650037136A /* AddItemViewController.swift */; };
 		444C452622DDE7B600411EA3 /* CheckListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444C452522DDE7B600411EA3 /* CheckListItem.swift */; };
 		44F68A5622D73F2600EA4CD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F68A5522D73F2600EA4CD2 /* AppDelegate.swift */; };
 		44F68A5822D73F2600EA4CD2 /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F68A5722D73F2600EA4CD2 /* CheckListViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44160CE122E0C7650037136A /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		444C452522DDE7B600411EA3 /* CheckListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListItem.swift; sourceTree = "<group>"; };
 		44F68A5222D73F2600EA4CD2 /* Kandoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kandoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F68A5522D73F2600EA4CD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 		444C452922DDED1700411EA3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				44160CE122E0C7650037136A /* AddItemViewController.swift */,
 				44F68A5722D73F2600EA4CD2 /* CheckListViewController.swift */,
 			);
 			path = Controller;
@@ -168,6 +171,7 @@
 				44F68A5822D73F2600EA4CD2 /* CheckListViewController.swift in Sources */,
 				44F68A5622D73F2600EA4CD2 /* AppDelegate.swift in Sources */,
 				44F68A5E22D73F2600EA4CD2 /* Kandoo.xcdatamodeld in Sources */,
+				44160CE222E0C7650037136A /* AddItemViewController.swift in Sources */,
 				444C452622DDE7B600411EA3 /* CheckListItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
