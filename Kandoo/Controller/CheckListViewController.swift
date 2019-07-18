@@ -98,6 +98,14 @@ class CheckListViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
   
+    //Delete option for TO - do list items
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        //First: Remove the item from the data model.
+        items.remove(at: indexPath.row)
+        let indexPaths = [indexPath]
+        //Second: Delete the corresponding row from the tableview.
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+    }
     
     
 /*==============================================================
@@ -117,6 +125,7 @@ class CheckListViewController: UITableViewController {
         let newRowIndex = items.count
         let item = CheckListItem()
         item.text = "I a new row"
+        item.isChecked = true
         items.append(item)
         
         let indexPath = IndexPath(row: newRowIndex, section: 0)
