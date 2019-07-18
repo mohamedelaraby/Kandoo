@@ -17,9 +17,9 @@ class AddItemViewController: UITableViewController {
         navigationItem.largeTitleDisplayMode = .never
     }
 
-    /*==================================================================
-     ============[ @IBActions  ]========
-     ===================================================================
+    /*==================================================================================
+                        ============[ @IBActions  ]========
+     ===================================================================================
      */
  
     //Cancel Button option.
@@ -30,5 +30,16 @@ class AddItemViewController: UITableViewController {
     //Done button option.
     @IBAction func done(){
         navigationController?.popViewController(animated: true)
+    }
+    
+    /*=================================================================================
+                ============[ @Table View Methods  ]========
+     ==================================================================================
+     */
+    
+    //MARK:- Table View Delegates.
+    override func tableView(_ tableView: UITableView,
+                            willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
     }
 }
