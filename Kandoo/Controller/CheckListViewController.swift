@@ -52,9 +52,18 @@ class CheckListViewController: UITableViewController {
         item5.isChecked = true
          items.append(item5)
         
+        //Show big long nav bar title.
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        super.viewDidLoad()
         
     }
   
+/*==============================================================
+  =============[ Table View Methods ]=============
+  ==============================================================
+*/
+    
     //MARK:- TAble view Data source
     //Ask the data source for the number of rows it has.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -88,8 +97,40 @@ class CheckListViewController: UITableViewController {
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
+  
     
     
+/*==============================================================
+  =============[ IBActions ]=============
+  ==============================================================
+*/
+    //MARK:-- Add some functionality to the add item button
+    @IBAction func addItem(){
+        //1- Get new row index
+        //2- Create an checklistitm object
+        //3- Add new text to teh item object
+        //4- append this item to the items array.
+        //5- Get new index path for the new row.
+        //6- put the indexpath into array to pass it to the table view as new indexpath.
+        //7- tell table view that you will insert new row.
+        
+        let newRowIndex = items.count
+        let item = CheckListItem()
+        item.text = "I a new row"
+        items.append(item)
+        
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        let indexPathes = [indexPath]
+        
+        tableView.insertRows(at: indexPathes, with: .automatic)
+    }
+    
+    
+
+ /*==============================================================
+   =============[ Custom Methods ]=============
+   ==============================================================
+*/
     //MARK:- Configure the check mark property.
     func configureCheckmark(for cell: UITableViewCell, with item: CheckListItem){
     
