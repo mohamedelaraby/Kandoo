@@ -111,6 +111,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="W5i-Uj-qCP" id="gLc-uv-QIV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wa3-mH-wlg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

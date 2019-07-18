@@ -10,6 +10,13 @@ import UIKit
 
 class AddItemViewController: UITableViewController {
 
+    /*==================================================================================
+     ============[ @IBOutlets  ]========
+     ===================================================================================
+     */
+    @IBOutlet weak var textField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,16 +28,22 @@ class AddItemViewController: UITableViewController {
                         ============[ @IBActions  ]========
      ===================================================================================
      */
+    
+    
  
+    //Done button option.
+    @IBAction func done(){
+        //Reading the contents of the text field.
+        print("Content of the text field: \(textField.text!)")
+        navigationController?.popViewController(animated: true)
+    }
+    
     //Cancel Button option.
     @IBAction func cancel(){
         navigationController?.popViewController(animated: true)
     }
 
-    //Done button option.
-    @IBAction func done(){
-        navigationController?.popViewController(animated: true)
-    }
+    
     
     /*=================================================================================
                 ============[ @Table View Methods  ]========
