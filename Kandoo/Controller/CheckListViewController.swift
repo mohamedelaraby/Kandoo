@@ -21,7 +21,9 @@
 
 import UIKit
 
-class CheckListViewController: UITableViewController {
+class CheckListViewController: UITableViewController, AddItemViewControllerDelegate {
+    
+   
     
     //the new data model.
      var items = [CheckListItem]()
@@ -31,27 +33,27 @@ class CheckListViewController: UITableViewController {
         let item1 = CheckListItem()
         item1.text = "Walk the dog"
         items.append(item1)
-        
+
         //The second row items.
         let item2 = CheckListItem()
         item2.text = "Brush my teeth"
         item2.isChecked = true
         items.append(item2)
-        
+
         let item3 = CheckListItem()
         item3.text = "Learn ios development"
         items.append(item3)
-        
+
         let item4 = CheckListItem()
         item4.isChecked = true
         item4.text = "Soccer practice"
         items.append(item4)
-        
+
         let item5 = CheckListItem()
         item5.text = "Eat ice Cream"
         item5.isChecked = true
          items.append(item5)
-        
+
         //Show big long nav bar title.
         navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -108,31 +110,38 @@ class CheckListViewController: UITableViewController {
     }
     
     
-/*==============================================================
-  =============[ IBActions ]=============
-  ==============================================================
-*/
-    //MARK:-- Add some functionality to the add item button
-    @IBAction func addItem(){
-        //1- Get new row index
-        //2- Create an checklistitm object
-        //3- Add new text to teh item object
-        //4- append this item to the items array.
-        //5- Get new index path for the new row.
-        //6- put the indexpath into array to pass it to the table view as new indexpath.
-        //7- tell table view that you will insert new row.
+    /*==============================================================
+     =============[ Add item view controller delegates]=============
+     ==============================================================
+     */
+    func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: CheckListItem) {
         
-        let newRowIndex = items.count
-        let item = CheckListItem()
-        item.text = "I a new row"
-        item.isChecked = true
+        let newRowItem = items.count
         items.append(item)
         
-        let indexPath = IndexPath(row: newRowIndex, section: 0)
-        let indexPathes = [indexPath]
-        
+        let newIndexPath = IndexPath(row: newRowItem, section: 0)
+        let indexPathes = [ newIndexPath]
         tableView.insertRows(at: indexPathes, with: .automatic)
+        navigationController?.popViewController(animated: true)
     }
+    
+    
+    //MARK:- Navigation.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //1
+        if segue.identifier == "AddItem" {
+            //2
+            let controller = segue.destination as! AddItemViewController
+            
+            //3
+            controller.delegate = self
+        }
+    }
+   
     
     
 

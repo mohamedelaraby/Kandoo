@@ -8,14 +8,32 @@
 
 import UIKit
 
-class AddItemViewController: UITableViewController {
+//AddItemViewController Delegate protocol.
+protocol AddItemViewControllerDelegate : class  {
+    
+    func addItemViewControllerDidCancel(_ controller: AddItemViewController)
+    
+    func addItemViewController(_ controller: AddItemViewController,
+                               didFinishAdding item: CheckListItem)
+}
 
+
+
+class AddItemViewController: UITableViewController, UITextFieldDelegate {
+
+    //Make the checklistitemviewcontroller is delegate of the additemviewcontroller.
+   weak var delegate: AddItemViewControllerDelegate?
+    
+    
+    
+    
+    
     /*==================================================================================
      ============[ @IBOutlets  ]========
      ===================================================================================
      */
     @IBOutlet weak var textField: UITextField!
-    
+    @IBOutlet weak var doneBarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +51,20 @@ class AddItemViewController: UITableViewController {
  
     //Done button option.
     @IBAction func done(){
-        //Reading the contents of the text field.
-        print("Content of the text field: \(textField.text!)")
-        navigationController?.popViewController(animated: true)
+    
+        //create new item fro checklistitem class.
+        let item  = CheckListItem()
+        item.text = textField.text!
+        
+        //assign the new item to teh delegate method.
+        delegate?.addItemViewController(self, didFinishAdding: item)
+        
+       navigationController?.popViewController(animated: true)
     }
     
     //Cancel Button option.
     @IBAction func cancel(){
+        delegate?.addItemViewControllerDidCancel(self)
         navigationController?.popViewController(animated: true)
     }
 
@@ -55,4 +80,41 @@ class AddItemViewController: UITableViewController {
                             willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return nil
     }
+    
+    
+    
+    /*=================================================================================
+     ============[ @Custom Methods  ]========
+     ==================================================================================
+     */
+    
+   override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        textField.becomeFirstResponder()
+    }
+    
+    /*=================================================================================
+     ============[ @Delegates ]========
+     ==================================================================================
+     */
+    
+    //Handle the done button disable or no disable.
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let oldText = textField.text!
+        let stringRange = Range(range, in: oldText)!
+        let newText = oldText.replacingCharacters(in: stringRange, with: string)
+        
+        doneBarButton.isEnabled = !newText.isEmpty
+        
+        return true
+    }
+    
+    //Handle the clear button with the done button disable function.
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        doneBarButton.isEnabled = false
+        return true
+    }
+
 }
+
